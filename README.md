@@ -1,6 +1,6 @@
 # Telegraph
-Design Pattern --> MVP 
-3rd Part Libraries ;
+# Design Pattern --> MVP 
+* 3rd Part Libraries ;
 * Dagger : Used for dependency injection , Good for decoupling objects ,removes boilerplate codes 
 * Retrofit : It is good 3rd party Http interface for making network calls to the REST web services 
 * RxJava : Used for async network call  
