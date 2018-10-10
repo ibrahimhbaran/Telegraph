@@ -1,6 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 ext {
-    archLifecycleVersion = '1.1.0'
     okhttpVersion = '3.2.0'
     retrofitVersion = '2.4.0'
     gsonVersion = '2.8.5'
