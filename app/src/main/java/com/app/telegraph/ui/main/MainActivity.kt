@@ -11,6 +11,9 @@ import com.app.telegraph.data.source.MovieService
 import com.app.telegraph.utils.ItemDecorator
 import com.app.telegraph.utils.ViewUtils
 import com.app.telegraph.utils.telegraphApp
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -41,7 +44,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
         mainPresenter.attach(this)
 
-        mainPresenter.loadData(apiService)
+        mainPresenter.loadData(apiService,Schedulers.io(),AndroidSchedulers.mainThread())
 
 
     }

@@ -1,6 +1,7 @@
 package com.app.telegraph.ui.main
 
 import com.app.telegraph.data.source.MovieService
+import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -15,9 +16,9 @@ class MainPresenter : MainContract.Presenter {
     private var view: MainContract.View? = null
 
     // presenter method communicates with model
-    override fun loadData(service: MovieService) {
+    override fun loadData(service: MovieService, processScheduler: Scheduler,  androidScheduler: Scheduler) {
 
-        mDisposable.add(service.getMovies().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+        mDisposable.add(service.getMovies().subscribeOn(processScheduler).observeOn(androidScheduler)
                 .doOnSubscribe {
                     view?.showProgress(true)
                 }

@@ -9,6 +9,7 @@ ext {
     glideVersion = '4.7.1'
     glideCompilerVersion ='4.8.0'
     daggerVersion = '2.+'
+    mockitoCoreVeersion ='2.+'
 
 }
 buildscript {
